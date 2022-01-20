@@ -1,9 +1,27 @@
-import VueTouter from 'vue-router'
+// import { createRouter, createWebHistory } from 'vue-router'
+// import Home from '../views/Home.vue'
 
-Vue.use(VueRouter)
+// const routes = [
+//   {
+//     path: '/',
+//     name: 'Home',
+//     component: Home
+//   },
+//   {
+//     path: '/dashboard',
+//     name: 'Dashboard',
+//     component: () => import('../views/Dashboard.vue')
+//   },
+//   {
+//     path: '/about',
+//     name: 'About',
+//     component: () => import('../views/About.vue')
+//   }
+// ]
 
-const router = new VueRouter({
-    routes: [
+// const router = createRouter({
+//   history: createWebHistory(process.env.BASE_URL),
+//   routes
+// })
 
-    ]
-})
+// export default router

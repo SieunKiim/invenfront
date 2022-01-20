@@ -28,7 +28,7 @@ export default {
     props: {},
     setup() {
         return {collapsed, toggleSidebar, sidebarWidth}
-    },
+    }
 }
 </script>
 
@@ -59,10 +59,14 @@ export default {
     flex-direction: column;
 }
 
+.sidebar h1 {
+  height: 2.5em;
+}
+
 .collapse-icon {
     position: absolute;
     bottom: 0;
-    padding: 0.75;
+    padding: 0.75em;
 
     color: rgba(255, 255, 255, 0.7);
     
