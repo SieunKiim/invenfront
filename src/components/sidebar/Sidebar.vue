@@ -8,11 +8,11 @@
             <span v-else>Vue Sidebar</span>
         </h1>
 
-        <SidebarLink to="/" icon="fas fa-home">Home</SidebarLink>
-        <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
-        <SidebarLink to="/analytics" icon="fas fa-chart-bar">Analytics</SidebarLink>
-        <SidebarLink to="/friends" icon="fas fa-users">Friends</SidebarLink>
-        <SidebarLink to="/image" icon="fas fa-image">Images</SidebarLink>
+        <SidebarLink to="/" icon="fas fa-align-justify">All</SidebarLink>
+        <SidebarLink to="/computer" icon="fas fa-chalkboard-teacher">Computer</SidebarLink>
+        <SidebarLink to="/screen" icon="fas fa-tv">Screen</SidebarLink>
+        <SidebarLink to="/medical" icon="fas fa-medkit">Medical</SidebarLink>
+        <SidebarLink to="/others" icon="fas fa-ellipsis-h">Others</SidebarLink>
 
         <span
             class="collapse-icon"

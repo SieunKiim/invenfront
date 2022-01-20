@@ -6,17 +6,27 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  }//,
-//   {
-//     path: '/dashboard',
-//     name: 'Dashboard',
-//     component: () => import('../views/Dashboard.vue')
-//   },
-//   {
-//     path: '/about',
-//     name: 'About',
-//     component: () => import('../views/About.vue')
-//   }
+  },
+  {
+    path: '/computer',
+    name: 'Computer',
+    component: () => import('../views/Computer.vue')
+  },
+  {
+    path: '/screen',
+    name: 'Screen',
+    component: () => import('../views/Screen.vue')
+  },
+  {
+    path: '/medical',
+    name: 'Medical',
+    component: () => import('../views/Medical.vue')
+  },
+  {
+    path: '/others',
+    name: 'Others',
+    component: () => import('../views/Others.vue')
+  }
 ]
 
 const router = createRouter({
