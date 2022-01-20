@@ -8,6 +8,8 @@
             <span v-else>Vue Sidebar</span>
         </h1>
 
+
+
         <SidebarLink to="/" icon="fas fa-align-justify">All</SidebarLink>
         <SidebarLink to="/computer" icon="fas fa-chalkboard-teacher">Computer</SidebarLink>
         <SidebarLink to="/screen" icon="fas fa-tv">Screen</SidebarLink>
