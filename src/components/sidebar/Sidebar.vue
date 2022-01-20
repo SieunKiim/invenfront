@@ -1,5 +1,3 @@
-// 사이드바 헤더랑 컴포넌트들 포함
-
 <template>
     <div class="sidebar" :style="{ width: sidebarWidth }">
         <h1>
@@ -10,6 +8,11 @@
             <span v-else>Vue Sidebar</span>
         </h1>
 
+        <SidebarLink to="/" icon="fas fa-home">Home</SidebarLink>
+        <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
+        <SidebarLink to="/analytics" icon="fas fa-chart-bar">Analytics</SidebarLink>
+        <SidebarLink to="/friends" icon="fas fa-users">Friends</SidebarLink>
+        <SidebarLink to="/image" icon="fas fa-image">Images</SidebarLink>
 
         <span
             class="collapse-icon"
@@ -22,10 +25,12 @@
 </template>
 
 <script>
+import SidebarLink from './SidebarLink.vue'
 import { collapsed, toggleSidebar, sidebarWidth } from './state'
 
 export default {
     props: {},
+    components: {SidebarLink},
     setup() {
         return {collapsed, toggleSidebar, sidebarWidth}
     }
