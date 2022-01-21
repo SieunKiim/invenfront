@@ -2,12 +2,10 @@
     <div class="sidebar" :style="{ width: sidebarWidth }">
         <h1>
             <span v-if="collapsed">
-                <div>V</div>
-                <div>S</div>
+                
             </span>
-            <span v-else>Vue Sidebar</span>
+            <span v-else>LAMEDITECH</span>
         </h1>
-
 
 
         <SidebarLink to="/" icon="fas fa-align-justify">All</SidebarLink>
@@ -58,7 +56,7 @@ export default {
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 0.5em;
+    padding: 1em;
 
     transition: 0.3s ease;
 
@@ -67,7 +65,8 @@ export default {
 }
 
 .sidebar h1 {
-  height: 2.5em;
+    height: 2em;
+    
 }
 
 .collapse-icon {
