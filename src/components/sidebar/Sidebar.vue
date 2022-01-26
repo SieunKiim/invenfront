@@ -8,11 +8,11 @@
         </h1>
 
 
-        <SidebarLink to="/" icon="fas fa-align-justify">All</SidebarLink>
-        <SidebarLink to="/computer" icon="fas fa-chalkboard-teacher">Computer</SidebarLink>
-        <SidebarLink to="/screen" icon="fas fa-tv">Screen</SidebarLink>
-        <SidebarLink to="/medical" icon="fas fa-medkit">Medical</SidebarLink>
-        <SidebarLink to="/others" icon="fas fa-ellipsis-h">Others</SidebarLink>
+        <SidebarLink to="/inven/All/" icon="fas fa-align-justify">All</SidebarLink>
+        <SidebarLink to="/inven/Computer/" icon="fas fa-chalkboard-teacher">Computer</SidebarLink>
+        <SidebarLink to="/inven/Screen/" icon="fas fa-tv">Screen</SidebarLink>
+        <SidebarLink to="/inven/Medical/" icon="fas fa-medkit">Medical</SidebarLink>
+        <SidebarLink to="/inven/Others/" icon="fas fa-ellipsis-h">Others</SidebarLink>
 
         <span
             class="collapse-icon"

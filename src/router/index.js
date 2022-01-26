@@ -3,27 +3,30 @@ import Home from '../views/Home.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/', redirect: '/inven/All/'
+  },
+  {
+    path: '/inven/All/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/computer',
+    path: '/inven/Computer/',
     name: 'Computer',
     component: () => import('../views/Computer.vue')
   },
   {
-    path: '/screen',
+    path: '/inven/Screen/',
     name: 'Screen',
     component: () => import('../views/Screen.vue')
   },
   {
-    path: '/medical',
+    path: '/inven/Medical/',
     name: 'Medical',
     component: () => import('../views/Medical.vue')
   },
   {
-    path: '/others',
+    path: '/inven/Others/',
     name: 'Others',
     component: () => import('../views/Others.vue')
   }
