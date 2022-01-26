@@ -2,7 +2,7 @@
 <div>
     <h1>여긴 컴퓨터</h1>
     <div class="Computer_User" v-for="Computer in Computer_list" v-bind:key="Computer.id">
-        <h3>{{Computer}}</h3>
+        <h3>{{Computer.user}}</h3>
     </div>
 </div>
 </template>
