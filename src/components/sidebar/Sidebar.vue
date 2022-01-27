@@ -1,12 +1,15 @@
 <template>
     <div class="sidebar" :style="{ width: sidebarWidth }">
-        <h1>
+        <div class="row" >
+        
             <span v-if="collapsed">
-                
+                &nbsp;
             </span>
-            <span v-else>LAMEDITECH</span>
-        </h1>
+            <span v-else >LAMEDITECH</span>
+        
 
+        </div>
+        
 
         <SidebarLink to="/inven/All/" icon="fas fa-align-justify">All</SidebarLink>
         <SidebarLink to="/inven/Computer/" icon="fas fa-chalkboard-teacher">Computer</SidebarLink>
@@ -56,18 +59,24 @@ export default {
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 1em;
+    padding: 0.5em;
 
     transition: 0.3s ease;
 
     display: flex;
     flex-direction: column;
 }
-
-.sidebar h1 {
+.row {
+    font-size: 1.5em;
+    height: 2.7em;
+    margin-top: 2em; 
+    font-weight: 800;
+    padding: 0em;
+}
+/* .sidebar h1 {
     height: 2em;
     
-}
+} */
 
 .collapse-icon {
     position: absolute;

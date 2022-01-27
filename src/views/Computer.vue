@@ -1,7 +1,8 @@
 <template>
 <div>
     <h1>여긴 컴퓨터</h1>
-    <div class="Computer_User" v-for="Computer in Computer_list" v-bind:key="Computer.id">
+    <input type="text" v-model="search">
+    <div class="Computer_User" v-for="Computer in COM_data" v-bind:key="Computer.id">
         <h3>{{Computer.user}}</h3>
     </div>
 </div>
@@ -14,6 +15,7 @@ let url = "http://127.0.0.1:8000/inven/Computer/";
 export default {
   data: () => {
     return {
+      search: "",
       Computer_list: []
     };
   },
@@ -33,9 +35,12 @@ export default {
 
     });
   },
-//   methods: { // 로직 들어간다는디
-
-//   }
+  computed: {
+    COM_data() {
+      return this.Computer_list.filter(Computer =>
+        Computer.user.includes(this.search));
+    }
+  }
 }
 
 </script> 
