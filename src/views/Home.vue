@@ -1,7 +1,8 @@
 <template>
 <div>
-  <div>
-    <input type="text" v-model="search" placeholder="사용자 검색">
+  <div class="form-floating">
+    <input type="text" class="form-control " id="userSearch" v-model="search" label="🔎" placeholder="사용자 검색">
+    <label for="userSearch">사용자 검색</label>
   </div>
   <div class="table-responsive">
     <table class="table table-classic table-hover">
