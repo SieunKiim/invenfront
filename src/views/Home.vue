@@ -1,10 +1,13 @@
 <template>
 <div>
-  <div class="form-floating">
-    <input type="text" class="form-control " id="userSearch" v-model="search" label="🔎" placeholder="사용자 검색">
-    <label for="userSearch">사용자 검색</label>
+  <div class="container w-25 mx-5 mt-5">
+    <div class="form-floating">
+      <!-- <textarea class="form-control" style="height: 10px" placeholder=" " id="userSearch" :value="name" @input="searchName"></textarea> -->
+      <input type="text" class="form-control" id="userSearch" :value="name" @input="searchName" placeholder="사용자 검색">
+      <label for="userSearch">사용자 검색</label>
+    </div>
   </div>
-  <div class="table-responsive">
+  <div class="table-responsive mx-5 mt-2">
     <table class="table table-classic table-hover">
       <thead>
         <tr>
@@ -34,7 +37,7 @@ let url = "http://127.0.0.1:8000/inven/All/";
 export default {
   data: () => {
     return {
-      search: "",
+      name: "",
       All_list: [],
     };
   },
@@ -52,18 +55,30 @@ export default {
         console.log("Failed", response);
       });
   },
+  methods: {
+    searchName(e) {
+      this.name = e.target.value
+    }
+  },
   computed: {
     All_data() {
       return this.All_list.filter(tool =>
-        tool.user.includes(this.search));
+        tool.user.includes(this.name));
     }
   }
 };
 </script>
 
 <style>
-.table-responsive {
-  padding: 3em;
+/* .table-responsive {
+  padding: 3em; 
   margin-top: 5em;
+} */
+.container {
+  padding-top: 4em;
+  margin-right: 7em;
+}
+.label {
+  font-size: 4px;
 }
 </style>
