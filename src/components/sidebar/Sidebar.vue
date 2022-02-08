@@ -16,7 +16,11 @@
         <SidebarLink to="/inven/Screen/" icon="fas fa-tv">Screen</SidebarLink>
         <SidebarLink to="/inven/Medical/" icon="fas fa-medkit">Medical</SidebarLink>
         <SidebarLink to="/inven/Others/" icon="fas fa-ellipsis-h">Others</SidebarLink>
-
+        
+        
+        <div>
+            <!-- <SidebarLink to="/user/" icon="fas fa-ellipsis-h">사용자 추가</SidebarLink> -->
+        </div>
         <span
             class="collapse-icon"
             :class="{ 'rotate-180': collapsed }"

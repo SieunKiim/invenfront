@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="float-start p-3 mt-2">
-    <button type="button" class="btn btn-outline-success btn-sm">사용자 추가</button>
+    <button type="button" class="btn btn-outline-success btn-sm" @click="onClickRedirect">사용자 추가</button>
   </div>
   <div class="m-4em">
     <table class="table table-classic table-hover" id="AllTable">
@@ -62,6 +62,10 @@ export default {
       });
   },
   methods: {
+    onClickRedirect(){
+      this.$router.push('/user/');
+      // console.log("클릭");
+    },
     searchName(e) {
       this.name = e.target.value
     },
