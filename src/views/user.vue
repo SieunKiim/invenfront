@@ -9,7 +9,7 @@
             <label :for="item.id">{{ item.label }} </label>
             <input :type="item.type" :id="item.id" :name="item.id" v-model="item.value" :placeholder="item.placeholder">
         </div>
-        <button type="submit">저장</button>
+        <button id="submit" type="submit">저장</button>
     </form>
   </div>
 </template>
@@ -18,6 +18,7 @@
 export default {
   data() {
     return {
+      isDisabled: true,
       formItems: [
         {
           label: '이름',
@@ -42,7 +43,9 @@ export default {
         },
       ]
     };
-  }
+  },
+
+  
 };
 </script>
 

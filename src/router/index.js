@@ -34,6 +34,26 @@ const routes = [
     path: '/user/',
     name: 'user',
     component: () => import('../views/user.vue')
+  },
+  {
+    path: '/Computer/add/',
+    name: 'addComputer',
+    component: () => import('../views/addComputer.vue')
+  },
+  {
+    path: '/Screen/add/',
+    name: 'addScreen',
+    component: () => import('../views/addScreen.vue')
+  },
+  {
+    path: '/Medical/add/',
+    name: 'addMedical',
+    component: () => import('../views/addMedical.vue')
+  },
+  {
+    path: '/Others/add/',
+    name: 'addOthers',
+    component: () => import('../views/addOthers.vue')
   }
 ]
 

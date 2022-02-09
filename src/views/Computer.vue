@@ -11,6 +11,9 @@
   <div class="float-start p-3 mt-2">
     <button type="button" class="btn btn-outline-success btn-sm" @click="onClickRedirect">사용자 추가</button>
   </div>
+  <div class="float-end p-3 mt-2">
+    <button type="button" class="btn btn-outline-primary btn-sm" @click="addComputerRedirect">컴퓨터 추가</button>
+  </div>
   <div class="m-4em">
     <table class="table table-classic table-hover" id="ComputerTable">
       <thead>
@@ -72,6 +75,10 @@ export default {
   methods: {
     onClickRedirect(){
       this.$router.push('/user/');
+      // console.log("클릭");
+    },
+    addComputerRedirect(){
+      this.$router.push('/Computer/add/');
       // console.log("클릭");
     },
     searchName(e) {

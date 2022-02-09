@@ -11,6 +11,9 @@
   <div class="float-start p-3 mt-2">
     <button type="button" class="btn btn-outline-success btn-sm" @click="onClickRedirect">사용자 추가</button>
   </div>
+  <div class="float-end p-3 mt-2">
+    <button type="button" class="btn btn-outline-primary btn-sm" @click="onClickAddRedirect">스크린 추가</button>
+  </div>
   <div class="m-4em">
     <table class="table table-classic table-hover" id="ScreenTable">
       <thead>
@@ -68,6 +71,10 @@ export default {
   methods: {
     onClickRedirect(){
       this.$router.push('/user/');
+      // console.log("클릭");
+    },
+    onClickAddRedirect(){
+      this.$router.push('/Screen/add/');
       // console.log("클릭");
     },
     searchName(e) {
