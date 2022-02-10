@@ -20,7 +20,7 @@
         <tr>
           <th scope="col" @click="sortTable(0)">이름</th>
           <th scope="col" @click="sortTable(1)">부서</th>
-          <th scope="col" @click="sortTable(2)">장비</th>
+          <th scope="col" @click="sortTable(2)">직책</th>
           <th scope="col" @click="sortTable(3)">기기 종류</th>
           <th scope="col" @click="sortTable(4)">S / N</th>
           <th scope="col" @click="sortTable(5)">세부 정보</th>
