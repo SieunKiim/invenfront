@@ -7,10 +7,16 @@
     
     <form action="/inven/Others/add/" method="post" autocomplete='off'>
       
-      <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput">
+      <!-- <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput"> -->
+      <!-- <select v-for="n in user_list_len" :key="n" v-model="User_val" class="select"> -->
+      <select name="User" id="User" v-model="User_val" class="select" required>
+        <option value="" disabled selected>사용자를 선택하세요</option>
+        <option v-for="user in user_list" v-bind:key="user.id">
+          {{user.name}}
+        </option>
+      </select>
+       
       <input type="text" id="tool" name="tool" v-model="tool_val" placeholder="Others" readonly>
-
-
       <input type="text" id="other_tool_name" name="other_tool_name" v-model="other_tool_name" placeholder="장비 이름">
       <input type="text" id="details" name="details" v-model="details" placeholder="세부 사항">
       <div class="my-4">
@@ -23,16 +29,36 @@
 </template>
 
 <script>
-
+// console.log("여긴 others 추가 페이지")
+import axios from "axios";
+let url = "http://127.0.0.1:8000/inven/Others/add";
 
 export default {
+
   data: () => {
     return {
       User_val:'',
       tool_val:'Others',
       other_tool_name:'',
-      details:''
+      details:'',
+      user_list: [],
+      user_list_len: 0
     }
+  },
+  mounted() {
+    axios({
+      method: "GET",
+      url: url,
+    })
+      .then((response) => {
+        this.user_list = response.data;
+        this.user_list_len = this.user_list.length;
+        console.log(this.user_list);
+        console.log(this.user_list_len);
+      })
+      .catch((response) => {
+        console.log("Failed", response);
+      });
   },
   methods: {
 
@@ -41,6 +67,16 @@ export default {
 </script>
 
 <style>
+select{
+  margin-top: 50px;
+  margin-bottom: 8px; 
+  border-radius: 5px;
+  width: 202px;
+  height: 27px;
+}
+select option[value=""] [disabled] {
+  display: none;
+}
 input { 
   margin: 8px 2px; 
   border-radius: 5px;

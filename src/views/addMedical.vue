@@ -7,10 +7,16 @@
     
     <form action="/inven/Medical/add/" method="post" autocomplete='off'>
       
-      <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput">
+      <!-- <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput"> -->
+
+      <select name="User" id="User" v-model="User_val" class="select" required>
+        <option value="" disabled selected>사용자를 선택하세요</option>
+        <option v-for="user in user_list" v-bind:key="user.id">
+          {{user.name}}
+        </option>
+      </select>
+
       <input type="text" id="tool" name="tool" v-model="tool_val" placeholder="Medical" readonly>
-
-
       <input type="text" id="medical_type" name="medical_type" v-model="medical_type" placeholder="의료기기 종류">
       <input type="text" id="details" name="details" v-model="details" placeholder="세부 사항">
       <input type="text" id="serial_Number" name="serial_Number" v-model="serial_Number" placeholder="S/N">
@@ -25,7 +31,8 @@
 </template>
 
 <script>
-
+import axios from "axios";
+let url = "http://127.0.0.1:8000/inven/Medical/add";
 
 export default {
   data: () => {
@@ -35,8 +42,25 @@ export default {
       medical_type:'',
       details:'',
       serial_Number:'',
-      man_date:''
+      man_date:'',
+      user_list: [],
+      user_list_len: 0
     }
+  },
+  mounted() {
+    axios({
+      method: "GET",
+      url: url,
+    })
+      .then((response) => {
+        this.user_list = response.data;
+        this.user_list_len = this.user_list.length;
+        console.log(this.user_list);
+        console.log(this.user_list_len);
+      })
+      .catch((response) => {
+        console.log("Failed", response);
+      });
   },
   methods: {
 
@@ -45,6 +69,16 @@ export default {
 </script>
 
 <style>
+select{
+  margin-top: 50px;
+  margin-bottom: 8px; 
+  border-radius: 5px;
+  width: 202px;
+  height: 27px;
+}
+select option[value=""] [disabled] {
+  display: none;
+}
 input { 
   margin: 8px 2px; 
   border-radius: 5px;
@@ -62,5 +96,10 @@ h1 {
     border: 1px solid gray;
     border-radius: 30px;
     width : 300px;
+}
+#man_date {
+  border-radius: 5px;
+  width: 202px;
+  height: 30px;
 }
 </style>
