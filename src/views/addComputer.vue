@@ -1,58 +1,70 @@
 <template>
-<div class="m-5">
-<form class="was-validated">
-  <div class="mb-3">
-    <label for="validationTextarea" class="form-label">Textarea</label>
-    <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-    <div class="invalid-feedback">
-      Please enter a message in the textarea.
-    </div>
+<div>
+  <div>
+    <h1>사용자 및 컴퓨터 사양 입력</h1>
   </div>
+  <div id="contai">
+    
+    <form action="/inven/Computer/add/" method="post" autocomplete='off'>
+      
+      <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput">
+      <input type="text" id="tool" name="tool" v-model="tool_val" placeholder="Computer" readonly>
 
-  <div class="form-check mb-3">
-    <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
-    <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
-    <div class="invalid-feedback">Example invalid feedback text</div>
-  </div>
 
-  <div class="form-check">
-    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
+      <input type="text" id="OS" name="OS" v-model="OS_val" placeholder="OS">
+      <input type="text" id="CPU" name="CPU" v-model="CPU_val" placeholder="CPU">
+      <input type="text" id="RAM" name="RAM" v-model="RAM_val" placeholder="RAM">
+      <input type="text" id="VGA" name="VGA" v-model="VGA_val" placeholder="VGA">
+      <input type="text" id="SSD_HDD" name="SSD_HDD" v-model="SSD_HDD_val" placeholder="SSD_HDD">
+     
+      <div class="my-4">
+        <button id="submit" type="submit">저장</button>
+      </div>
+      
+    </form>
   </div>
-  <div class="form-check mb-3">
-    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
-    <div class="invalid-feedback">More example invalid feedback text</div>
-  </div>
-
-  <div class="mb-3">
-    <select class="form-select" required aria-label="select example">
-      <option value="">Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <div class="invalid-feedback">Example invalid select feedback</div>
-  </div>
-
-  <div class="mb-3">
-    <input type="file" class="form-control" aria-label="file example" required>
-    <div class="invalid-feedback">Example invalid form file feedback</div>
-  </div>
-
-  <div class="mb-3">
-    <button class="btn btn-primary" type="submit" disabled>Submit form</button>
-  </div>
-</form>
 </div>
 </template>
 
 <script>
-export default {
 
+
+export default {
+  data: () => {
+    return {
+      msg: '',
+      User_val:'',
+      tool_val:'Computer',
+      OS_val:'',
+      CPU_val:'',
+      RAM_val:'',
+      VGA_val:'',
+      SSD_HDD_val:''
+    }
+  },
+  methods: {
+
+  },
 }
 </script>
 
 <style>
-
+input { 
+  margin: 8px 2px; 
+  border-radius: 5px;
+  }
+h1 {
+  margin-top: 3em;
+}
+.topInput {
+  margin-top: 30px;
+}
+#contai {
+    margin-top: 4em;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid gray;
+    border-radius: 30px;
+    width : 300px;
+}
 </style>
