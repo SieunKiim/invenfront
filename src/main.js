@@ -7,3 +7,5 @@ import "bootstrap"
 import '@fortawesome/fontawesome-free/js/all.js'
 
 createApp(App).use(router).mount('#app')
+
+// 출석
