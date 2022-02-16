@@ -6,7 +6,6 @@
   <div id="contai">
     
     <form action="/inven/Medical/add/" method="post" autocomplete='off'>
-      
       <!-- <input type="text" id="User" name="User" v-model="User_val" placeholder="User" class="topInput"> -->
 
       <select name="User" id="User" v-model="User_val" class="select" required>
